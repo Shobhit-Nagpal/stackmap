@@ -1,0 +1,28 @@
+================================================================================
+                                                                 *stackmap.nvim*
+This plugin helps you to push  a bunch of maps on some event and pop them when you're done with that event.
+
+See example below:
+
+                                                               *stackmap.push()*
+stackmap.push({name}, {mode}, {mappings}) 
+  Push the {name} mappings to a particular {mode}. Mappings should be a key-value pair of
+  LHS and RHS
+  >
+  stackmap.push("example", "n", {
+    ["<Space>st"] = "echo 'Wow, this got pushed'",
+    ...
+    })
+  <
+                                                               *stackmap.pop()*
+stackmap.push({name}, {mode}) 
+  Pop the {name} mappings, restores original mappings from before calling |stackmap.push()|
+  >
+  stackmap.push("example", "n", {
+    ["<Space>st"] = "echo 'Wow, this got pushed'",
+    ...
+    })
+  <
+
+//This tells Vim that this is a help file, it's called Modeline
+vim:tw=78:ts=8:ft=help:norl: 
